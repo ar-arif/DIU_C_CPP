@@ -1,3 +1,5 @@
 {
-    "cmake.sourceDirectory": "/workspaces/DIU_C_CPP/3rd-semester/OOP"
+    "editor.mouseWheelZoom": true,
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true
 }
