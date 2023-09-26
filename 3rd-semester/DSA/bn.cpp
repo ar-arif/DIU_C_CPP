@@ -1,32 +1,47 @@
-#include <cstdio>
 #include <iostream>
 using namespace std;
 
+class Car {
+public:
+  string name;
+  string color;
+  string type;
+  int model;
+
+  Car(string n, string c) {
+    name = n;
+    color = c;
+  }
+
+  void updateType(string t) { 
+    type = t; 
+  }
+
+  void display() {
+    cout << "Car Name: " << name << endl;
+    cout << "Color: " << color << endl;
+    cout << "Car Type: " << type << endl;
+    cout << "Model: " << model << endl;
+  }
+};
+
 int main() {
-  int len;
-  cout << "Enter the len for Array: ";
-  cin >> len;
-  int arr[len];
-  for (int i = 0; i < len; ++i) {
-    cout << "Enter the value for [" << i << "] index: ";
-    cin >> arr[i];
-  }
-  int low = 0, high = len - 1, mid, count = 1;
-  int value;
-  cout << "Enter the value for Binary searching: ";
-  cin >> value;
-  for (int i = 0; i < len; ++i) {
-    mid = low + (high - low) / 2;
-    if (arr[mid] == value) {
-      cout << "Search Found [" << value << "] at [" << i << "] index with ["
-           << count << "] times loop" << endl;
-      break;
-    } else if (arr[mid] < value) {
-      low = mid + 1;
-    } else if (arr[mid] > value) {
-      high = mid - 1;
-    }
-    cout << "\n\t mid = " << mid << "\n" << endl;
-    count++;
-  }
+  Car lamborghini("Lamborghini Aventador   S", "Orange");
+  lamborghini.updateType("Sports Car");
+  lamborghini.model = 2012;
+
+  Car tesla("Tesla Cybertruck", "Gray");
+  tesla.updateType("Pickup Truck");
+  tesla.model = 2023;
+
+  Car ford("Ford Mustang", "Silver");
+  ford.updateType("Muscle Car");
+  ford.model = 1964;
+
+  lamborghini.display();
+  cout << "==================" << endl;
+  tesla.display();
+  cout << "==================" << endl;
+  ford.display();
+  return 0;
 }
